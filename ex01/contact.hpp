@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 05:09:18 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/06/09 05:10:48 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2025/06/10 19:20:51 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,5 @@ class Contact
 	
 	void	set_info(std::string &s);
 	void	set_contact(void);
-	void	get_all(void);
-
+	void	displayed(int i);
 };

@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 20:29:24 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/06/09 04:36:12 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2025/06/10 19:21:46 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ void	Contact::set_info(std::string &s)
 		empty_line(s);
 }
 
-void	Contact::get_all(void)
+void	Contact::displayed(int i)
 {
-	std::cout << _first_name << "// ";
-	std::cout << _last_name << "// ";
-	std::cout << _nick_name << "// ";
-	std::cout << _number << "// ";
-	std::cout << _secret << "// \n";
+	std::cout << std::setw(10) << i << '|';
+	std::cout << std::setw(10) << _first_name << '|';
+	std::cout << std::setw(10) << _last_name << '|';
+	std::cout << std::setw(10) << _nick_name << '|\n';
+
 }
