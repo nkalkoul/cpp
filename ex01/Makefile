@@ -1,6 +1,6 @@
-SRCS =	megaphone.cpp
+SRCS =	phonebook.cpp contact.cpp utils.cpp
 CC =	c++ -Wall -Werror -Wextra -std=c++98
-NAME =	megaphone
+NAME =	phonebook
 OBJS =	$(SRCS:.cpp=.o)
 
 all : $(NAME)
