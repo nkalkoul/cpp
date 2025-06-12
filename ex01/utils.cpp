@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 14:36:00 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/06/09 05:05:38 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2025/06/12 05:35:44 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	empty_line(std::string &s)
 {
 	while (s == "")
 	{
-		std::cout << "Ce champ ne peut etre vide ! Recommencez.";
+		std::cout << "Ce champ ne peut etre vide ! Recommencez :";
 		safe_gline(s);
 	}
 }
