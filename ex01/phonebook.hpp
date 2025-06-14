@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 20:29:43 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/06/11 04:32:26 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2025/06/13 16:30:37 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 #include <iostream>
 #include <iomanip>
+#include <cctype>
 #include "contact.hpp"
 
 class Phonebook
@@ -32,3 +33,5 @@ class Phonebook
 
 void	safe_gline(std::string &s);
 void	empty_line(std::string &s);
+int		is_number(const std::string s);
+void	wrong_number(std::string &s);

@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 12:00:05 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/06/12 05:49:02 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2025/06/13 19:11:39 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	Phonebook::ft_all(void)
 {
 	int i = 0;
 	frontscreen();
-	for (int i = 0; contact[i].last != 1; i++)
+	for (int i = 0; contact[i].get_last() != 1; i++)
 		contact[i].displayed(i + 1);
 	std::cout << '\n';
 }
@@ -29,26 +29,23 @@ void	Phonebook::ft_search(void)
 	int 		j = 0;
 	std::string search;
 
-	std::cout << "Tapez le nom de l'index du contact a afficher : ";
+	std::cout << "\nTapez l'index du contact a afficher : ";
 	safe_gline(search);
-	if (search == "")
-		return (ft_all());
 	while (search.size() > 1 || search[0] < '1' || search[0] > '9')
 	{
 		std::cout << "Ce n'est pas un index ! Recommencez (entre 1 et 8) : ";
 		safe_gline(search);
 	}
 	i = search[0] - 48;
-	while (contact[j].last == 0)
+	while (contact[j].get_last() == 0)
 		j++;
 	if (i > j)
 	{
-		frontscreen();
-		std::cout << "\nPas de contact a cet index !\n\n";
+		std::cout << "\nPas de contact a cet index !\n";
+		ft_search() ;
 		return ;
 	}
-	frontscreen();
-	contact[i - 1].displayed(i);
+	contact[i - 1].displayone();
 	std::cout << '\n';
 }
 
@@ -74,12 +71,11 @@ void	Phonebook::ft_phonebook(void)
 
 	i = 0;
 	last = 0;
-	contact[i].last = 1;
+	contact[i].is_last();
 	while (1)
 	{
 		std::cout << "entrez une commande (ADD / SEARCH / EXIT) : ";
 		safe_gline(buffer);
-		// std::cout << "\n";
 		if (buffer == "ADD")
 		{
 			contact[i].set_contact();
@@ -93,7 +89,10 @@ void	Phonebook::ft_phonebook(void)
 			}
 		}
 		else if (buffer == "SEARCH")
+		{
+			ft_all();
 			ft_search();
+		}
 		else if (buffer == "EXIT")
 			return ;
 	}

@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 20:29:24 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/06/11 06:00:58 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2025/06/13 18:59:18 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	Contact::set_contact(void)
 	std::cout << "Son surnom ? : ";
 	set_info(_nick_name);
 	std::cout << "Son numero ? : ";
-	set_info(_number);
+	set_number(_number);
 	std::cout << "Et pour finir, son piiire secret ? : ";
 	set_info(_secret);
 	last = 0;
@@ -51,3 +51,22 @@ void	Contact::displayed(int i)
 	std::cout << std::setw(10) << _last_name << '|';
 	std::cout << std::setw(10) << _nick_name << "|\n";
 }
+
+void	Contact::displayone(void)
+{
+	std::cout << std::setw(38) << "" << _first_name << std::endl;
+	std::cout << std::setw(38) << "" << _last_name << std::endl;
+	std::cout << std::setw(38) << "" << _nick_name << "\n";
+	std::cout << std::setw(38) << "" << _number << std::endl;
+	std::cout << std::setw(38) << "" << _secret << std::endl;
+}
+
+void	Contact::set_number(std::string &s)
+{
+	safe_gline(s);
+	if (!is_number(s))
+		wrong_number(s);
+}
+
+int		Contact::get_last(void) {
+	return (last);}
