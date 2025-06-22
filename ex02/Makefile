@@ -1,4 +1,4 @@
-SRCS =	Account.cpp
+SRCS =	Account.cpp tests.cpp
 CC =	c++ -Wall -Werror -Wextra -std=c++98
 NAME =	phonebook
 OBJS =	$(SRCS:.cpp=.o)
