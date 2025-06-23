@@ -1,6 +1,6 @@
 SRCS =	Account.cpp tests.cpp
-CC =	c++ -Wall -Werror -Wextra -std=c++98
-NAME =	phonebook
+CC =	c++ -Wall -Werror -Wextra -std=c++98 -g3
+NAME =	account
 OBJS =	$(SRCS:.cpp=.o)
 
 all : $(NAME)
