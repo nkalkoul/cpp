@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 21:14:29 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/06/23 05:16:11 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2025/06/24 22:21:40 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,5 +96,5 @@ void	Account::_displayTimestamp( void )
 {
 	std::time_t t = std::time(NULL);
 	std::tm *time = std::localtime(&t);
-	std::cout << '[' << time->tm_year + 1900 << time->tm_mon << time->tm_mday + 1 << '_' << time->tm_hour << time->tm_min << time->tm_sec << "] ";
+	std::cout << '[' << time->tm_year + 1900 << time->tm_mon + 1 << time->tm_mday << '_' << time->tm_hour << time->tm_min << time->tm_sec << "] ";
 }
