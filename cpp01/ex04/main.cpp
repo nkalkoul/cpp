@@ -5,20 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/24 00:35:42 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/10/19 01:35:16 by nkalkoul         ###   ########.fr       */
+/*   Created: 2025/10/19 07:05:58 by nkalkoul          #+#    #+#             */
+/*   Updated: 2025/10/19 08:16:11 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#include "file.hpp"
 
-int	main(void)
-{
-	std::string s = "HI THIS IS BRAIN";
-	std::string *stringPTR = &s;
-	std::string &stringREF = s;
-	
-	std::cout << "adress of String variable : " << &s << "\nAdress held by stringPTR : " << stringPTR << "\nAdress held by stringREF : " << &stringREF << std::endl;
-	std::cout << "value of s : " << s << "\nvalue pointed by stringPTR : " << *stringPTR << "\nvalue pointed by stringREF : " << s << std::endl;
+int	main(int ac, char **av){
+
+	if (ac != 4)
+		return (std::cout << "Error number of parameters (three)" << std::endl , 0);
+	file f = file(av[1], av[2], av[3]);
+	f.createnew();	
 }

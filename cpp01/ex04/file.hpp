@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   file.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/24 00:35:42 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/10/19 01:35:16 by nkalkoul         ###   ########.fr       */
+/*   Created: 2025/10/19 06:39:00 by nkalkoul          #+#    #+#             */
+/*   Updated: 2025/10/19 08:14:05 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
+
 #include <iostream>
+#include <fstream>
 #include <string>
 
-int	main(void)
-{
-	std::string s = "HI THIS IS BRAIN";
-	std::string *stringPTR = &s;
-	std::string &stringREF = s;
+class file {
 	
-	std::cout << "adress of String variable : " << &s << "\nAdress held by stringPTR : " << stringPTR << "\nAdress held by stringREF : " << &stringREF << std::endl;
-	std::cout << "value of s : " << s << "\nvalue pointed by stringPTR : " << *stringPTR << "\nvalue pointed by stringREF : " << s << std::endl;
-}
+private :
+	std::string _namefile;
+	std::ifstream _infile;
+	std::ofstream _outfile;
+	std::string _content;
+	std::string _tofind;
+	std::string _toreplace;
+
+public :
+	file (std::string name, std::string s1, std::string s2);
+	void	file::createnew( void );
+};

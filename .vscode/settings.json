@@ -49,6 +49,7 @@
 		"span": "cpp",
 		"iomanip": "cpp",
 		"ctime": "cpp",
-		"sstream": "cpp"
+		"sstream": "cpp",
+		"fstream": "cpp"
 	}
 }
