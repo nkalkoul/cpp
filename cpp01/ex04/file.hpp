@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 06:39:00 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/10/19 08:14:05 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2025/10/20 14:58:21 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ private :
 	std::string _toreplace;
 
 public :
-	file (std::string name, std::string s1, std::string s2);
-	void	file::createnew( void );
+	file(std::string name, std::string s1, std::string s2);
+	~file(void);
+	void	createnew( void );
 };

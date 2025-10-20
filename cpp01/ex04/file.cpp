@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 07:16:48 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/10/19 08:27:55 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2025/10/20 20:05:26 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,15 @@ file::file( std::string name, std::string s1, std::string s2 ) : _namefile(name)
 	return ;
 }
 
+file::~file( void ){}
+
 void	file::createnew( void ){
+
+	std::string	line;
+	std::string	content;
+	size_t	pos;
+
+	pos = 0;
 	_infile.open(this->_namefile.c_str());
 	if (!_infile.is_open()){
 		std::cerr << "Error open infile ! verify infile name" << std::endl;
@@ -27,4 +35,20 @@ void	file::createnew( void ){
 		std::cerr << "Error open outfile ! retry." << std::endl;
 		return ;
 	}
+	while(std::getline(_infile, line))
+	{
+		content += line;
+		if (!_infile.eof())
+			content += "\n";
+		}
+		std::cout << content << std::endl << _tofind;
+		
+	while ((pos = content.find(this->_tofind, pos)) != std::string::npos){
+		content = content.substr(0, pos) + _toreplace + content.substr(pos + 1 + _toreplace.size(), content.size());
+		pos += _toreplace.size();
+		std::cout << pos << "\n";
+	}
+
+	
+	_outfile << content;
 }

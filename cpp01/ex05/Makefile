@@ -1,6 +1,6 @@
-SRCS =	main.cpp file.cpp
+SRCS =	main.cpp
 CC =	c++ -Wall -Werror -Wextra -std=c++98 -g3
-NAME =	replace
+NAME =	
 OBJS =	$(SRCS:.cpp=.o)
 
 all : $(NAME)
