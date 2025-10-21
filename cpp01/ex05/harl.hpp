@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 21:00:08 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/10/21 08:14:29 by nkalkoul         ###   ########.fr       */
+/*   Created: 2025/10/21 07:40:34 by nkalkoul          #+#    #+#             */
+/*   Updated: 2025/10/21 08:16:05 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "harl.hpp"
+#pragma once
 
-int	main(void)
-{
-	Harl h;
+#include <iostream>
 
-	h.complain("INFO");
-	h.complain("WARNING");
-	h.complain("DEBUG");
-	h.complain("ERROR");
-	h.complain("OK");
-	h.complain("NASS");
-}
+class Harl {
+
+private:
+
+	void	debug( void );
+	void	info( void );
+	void	warning( void );
+	void	error( void );
+
+public:
+    Harl( void );
+    void	complain( std::string level );
+    ~Harl( void );
+
+};
