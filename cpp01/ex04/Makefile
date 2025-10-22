@@ -9,9 +9,9 @@ $(NAME): $(OBJS)
 	$(CC) $(OBJS)  -o $(NAME)
 	@echo "done !"
 
-%.o : %.c
+%.o : %.cpp
 	@$(CC) -c $< -o $@
-	#echo "compiling: $<"
+	echo "compiling: $<"
 
 clean :
 	@rm -f $(OBJS)

@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 20:29:43 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/06/22 16:23:28 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2025/10/22 17:19:16 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iomanip>
 #include <cctype>
 #include "contact.hpp"
+#include <cstdlib>
 
 class Phonebook
 {

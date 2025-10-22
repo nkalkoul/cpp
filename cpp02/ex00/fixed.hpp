@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 13:36:25 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/10/21 14:42:24 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2025/10/22 16:46:33 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ class Fixed {
 
 private :
 
-	int _val;
-	static const int	_RawBits = 8;
+	int _Rawbits;
+	static const int	_FractionalBits = 8;
 
 public :
 

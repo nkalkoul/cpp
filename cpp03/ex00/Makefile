@@ -1,6 +1,6 @@
-SRCS =	phonebook.cpp contact.cpp utils.cpp
-CC =	c++ -Wall -Werror -Wextra -std=c++98
-NAME =	phonebook
+SRCS =	main.cpp Claptrap.cpp
+CC =	c++ -Wall -Werror -Wextra -std=c++98 -g3
+NAME =	clap
 OBJS =	$(SRCS:.cpp=.o)
 
 all : $(NAME)

@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 12:00:05 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/06/13 19:11:39 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2025/10/22 17:17:30 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 
 void	Phonebook::ft_all(void)
 {
-	int i = 0;
 	frontscreen();
 	for (int i = 0; contact[i].get_last() != 1; i++)
 		contact[i].displayed(i + 1);
