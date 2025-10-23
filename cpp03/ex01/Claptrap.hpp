@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Claptrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nassuto <nassuto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 19:47:19 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/10/22 20:40:13 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2025/10/23 11:52:10 by nassuto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 class Claptrap{
 
-private:
+protected:
 	
 	std::string _name;
 	int _Hit;

@@ -3,20 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nassuto <nassuto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 19:49:05 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/10/22 21:02:28 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2025/10/23 12:02:01 by nassuto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Claptrap.hpp"
+#include "Scavtrap.hpp"
 
 int	main(void){
-	Claptrap ayb("ayoub");
-	Claptrap ayb2(ayb);
+	ScavTrap n;
+	ScavTrap s("saif");
+	ScavTrap s2;
 
-	ayb.attack("saif");
-	ayb2.takeDamage(8);
-	ayb.beRepaired(7);
+	s2 = s;
+	s.guardGate();
+	s2.guardGate();
+	n.guardGate();
 }
