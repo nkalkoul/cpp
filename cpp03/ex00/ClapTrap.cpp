@@ -6,31 +6,31 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 19:46:57 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/10/22 21:07:41 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2025/10/26 21:37:13 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Claptrap.hpp"
+#include "ClapTrap.hpp"
 
-Claptrap::Claptrap( void ) : _name("NoId"), _Hit(10), _Energypoint(10), _attackDamage(0){
+ClapTrap::ClapTrap( void ) : _name("NoId"), _Hit(10), _Energypoint(10), _attackDamage(0){
 	std::cout << "basic constructor" << std::endl;
 }
 
-Claptrap::Claptrap( const std::string n) : _name(n), _Hit(10), _Energypoint(10), _attackDamage(0){
+ClapTrap::ClapTrap( const std::string n) : _name(n), _Hit(10), _Energypoint(10), _attackDamage(0){
 	std::cout << "personalized constructor" << std::endl;
 }
 
-Claptrap::Claptrap( const Claptrap &c){
+ClapTrap::ClapTrap( const ClapTrap &c){
 	std::cout << "copy constructor" << std::endl;
 	*this = c;
 }
 
-Claptrap::~Claptrap( void ){
+ClapTrap::~ClapTrap( void ){
 	std::cout << "destructor" << std::endl;
 	
 }
 
-Claptrap &Claptrap::operator=( const Claptrap &c){
+ClapTrap &ClapTrap::operator=( const ClapTrap &c){
 	if (this != &c){
 		this->_name = c._name;
 		this->_attackDamage = c._attackDamage;
@@ -40,20 +40,20 @@ Claptrap &Claptrap::operator=( const Claptrap &c){
 	return (*this);
 }
 
-void	Claptrap::attack( const std::string &target){
+void	ClapTrap::attack( const std::string &target){
 	if (_Energypoint <= 0 || _Hit <=0)
 		return ;
 	std::cout << "ClapTrap " << _name << " is attacking " << target << ", causing " << _attackDamage << std::endl;
 }
 
-void Claptrap::takeDamage( unsigned int amount){
+void ClapTrap::takeDamage( unsigned int amount){
 	_Hit -= amount;
-	std::cout << "Claptrap " << _name << " taking " << amount << " damage" << std::endl;
+	std::cout << "ClapTrap " << _name << " taking " << amount << " damage" << std::endl;
 }
 
-void	Claptrap::beRepaired(unsigned int amount){
+void	ClapTrap::beRepaired(unsigned int amount){
 	_Hit += amount;
-	std::cout << "Claptrap " << _name << " was repaired " << amount << " hit points" << std::endl;
+	std::cout << "ClapTrap " << _name << " was repaired " << amount << " hit points" << std::endl;
 }
 
 

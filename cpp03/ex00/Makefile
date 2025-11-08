@@ -1,4 +1,4 @@
-SRCS =	main.cpp Claptrap.cpp
+SRCS =	main.cpp ClapTrap.cpp
 CC =	c++ -Wall -Werror -Wextra -std=c++98 -g3
 NAME =	clap
 OBJS =	$(SRCS:.cpp=.o)

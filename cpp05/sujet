@@ -1,0 +1,313 @@
+============================================================
+EXERCICE 00 : Mommy, when I grow up, I want to be a bureaucrat!
+============================================================
+
+Dossier à rendre : ex00/
+
+Fichiers à rendre : Makefile, main.cpp, Bureaucrat.{h, hpp}, Bureaucrat.cpp
+
+Fonctions interdites : Aucune
+
+Note : les classes d’exception n’ont PAS besoin d’être écrites en Orthodox Canonical Form.
+Cependant, toutes les autres classes doivent respecter cette règle.
+
+---
+
+On va concevoir un cauchemar administratif rempli de bureaux, de couloirs, de formulaires
+et de files d’attente interminables.
+
+Ça a l’air amusant ? Non ? Tant pis.
+
+Commençons par le plus petit engrenage de cette immense machine bureaucratique :
+le "Bureaucrat".
+
+---
+
+Un Bureaucrat doit avoir :
+
+• Un nom constant.
+• Un grade compris entre 1 (grade le plus élevé possible) et 150 (grade le plus bas possible).
+
+Toute tentative de créer un Bureaucrat avec un grade invalide doit lancer une exception :
+soit `Bureaucrat::GradeTooHighException`, soit `Bureaucrat::GradeTooLowException`.
+
+---
+
+Vous devez fournir des getters pour les deux attributs :  
+`getName()` et `getGrade()`.
+
+Vous devez également implémenter deux fonctions membres permettant d’incrémenter
+ou décrémenter le grade du bureaucrate.
+
+Si le grade sort de la plage autorisée, ces fonctions doivent lancer les mêmes exceptions
+que le constructeur.
+
+⚠️ Attention : comme le grade 1 est le meilleur et 150 le pire,
+incrémenter un grade 3 doit donner un grade 2.
+
+---
+
+Les exceptions doivent pouvoir être attrapées avec un bloc `try / catch` :
+
+try {
+    /* faire des trucs avec des bureaucrates */
+}
+catch (std::exception & e) {
+    /* gérer l’exception */
+}
+
+---
+
+Vous devez surcharger l’opérateur d’insertion (`<<`) pour afficher le format EXACT
+(sans chevrons) :
+
+<name>, bureaucrat grade <grade>.
+
+Exemple :
+Bob, bureaucrat grade 27.
+---
+
+Comme d’habitude, vous devez soumettre des tests qui prouvent que tout fonctionne
+comme prévu.
+
+
+
+============================================================
+EXERCICE 01 : Form up, maggots!
+============================================================
+
+Dossier à rendre : ex01/
+
+Fichiers à rendre : fichiers de l’exercice précédent + Form.{h, hpp}, Form.cpp
+
+Fonctions interdites : Aucune
+
+---
+
+Maintenant que vous avez des bureaucrates, donnons-leur quelque chose à faire.
+Quelle meilleure activité que remplir une pile de formulaires ?
+
+Créons donc la classe `Form`.
+
+Une Form possède :
+
+• Un nom constant.
+• Un booléen indiquant si elle est signée (à la construction, elle ne l’est PAS).
+• Un grade constant requis pour la signer.
+• Un grade constant requis pour l’exécuter.
+
+⚠️ Tous ces attributs doivent être PRIVÉS, pas protégés.
+
+---
+
+Les grades d’une Form respectent les mêmes règles que ceux d’un Bureaucrat.
+Donc, si un grade de formulaire est hors limite, vous devez lancer :
+
+`Form::GradeTooHighException` ou `Form::GradeTooLowException`.
+
+---
+
+Comme avant, vous devez écrire des getters pour tous les attributs
+et surcharger l’opérateur d’insertion (`<<`) afin d’afficher toutes
+les informations du formulaire.
+
+---
+
+Ajoutez la fonction membre suivante dans la classe Form :
+\\ void beSigned(Bureaucrat const & b);
+
+Cette fonction change l’état du formulaire en “signé” **uniquement** si le grade
+du bureaucrate est suffisamment élevé (donc inférieur ou égal au grade requis).
+
+⚠️ Rappel : le grade 1 est le meilleur, donc plus “haut” qu’un grade 2.
+
+Si le grade est trop bas, vous devez lancer une `Form::GradeTooLowException`.
+
+---
+
+Ensuite, modifiez la fonction membre `signForm()` dans la classe `Bureaucrat`.
+
+Cette fonction doit appeler `Form::beSigned()` pour tenter de signer le formulaire.
+
+• Si la signature réussit, afficher :
+<bureaucrat> signed <form>
+• Sinon, afficher :
+<bureaucrat> couldn’t sign <form> because <reason>
+
+
+
+============================================================
+EXERCICE 02 : No, you need form 28B, not 28C...
+============================================================
+
+Dossier à rendre : ex02/
+
+Fichiers à rendre :
+Makefile, main.cpp,
+Bureaucrat.[h/hpp + .cpp],
+AForm.[h/hpp + .cpp],
+ShrubberyCreationForm.[h/hpp + .cpp],
+RobotomyRequestForm.[h/hpp + .cpp],
+PresidentialPardonForm.[h/hpp + .cpp]
+
+Fonctions interdites : Aucune
+
+---
+
+Maintenant que vous avez des formulaires basiques, il est temps d’en créer plusieurs qui font
+réellement quelque chose.
+
+Dans tous les cas, la classe de base `Form` doit devenir une classe abstraite, et doit
+donc être renommée `AForm`.
+
+⚠️ Les attributs du formulaire doivent rester PRIVÉS, et ils doivent appartenir
+à la classe de base.
+
+---
+
+Ajoutez les classes concrètes suivantes :
+
+1) `ShrubberyCreationForm`
+   • Grades requis : signer = 145, exécuter = 137  
+   • Action : crée un fichier `<target>_shrubbery` dans le répertoire courant
+     et écrit des arbres ASCII dedans.
+
+2) `RobotomyRequestForm`
+   • Grades requis : signer = 72, exécuter = 45  
+   • Action : fait un bruit de perceuse, puis annonce que `<target>` a été
+     robotomisé avec succès **50% du temps**.  
+     Sinon, annonce que la robotomisation a échoué.
+
+3) `PresidentialPardonForm`
+   • Grades requis : signer = 25, exécuter = 5  
+   • Action : annonce que `<target>` a été gracié par Zaphod Beeblebrox.
+
+---
+
+Chaque formulaire concret prend **un seul paramètre dans son** constructeur** :
+le `target` du formulaire.
+
+Exemple : `“home”` si on veut planter un arbre chez soi.
+
+---
+
+➜ Maintenant, ajoutez la fonction membre suivante dans la classe AForm :
+void execute(Bureaucrat const & executor) const;
+
+Vous devez vérifier :
+
+1) que le formulaire est signé  
+2) que le grade du bureaucrate exécutant est suffisamment haut
+
+Sinon → lancer une exception appropriée.
+
+---
+
+Vous pouvez faire la vérification :
+
+✔ soit dans chaque classe concrète  
+✔ soit dans la classe de base AForm (et appeler une fonction virtuelle d’action)
+
+⚠️ Mais “une des deux méthodes est plus élégante que l’autre”.
+
+(→ cela sous-entend que le correcteur attend **une fonction virtuelle `executeAction()`**
+appelée depuis `AForm::execute()` après vérification)
+
+---
+
+Ajoutez également dans la classe `Bureaucrat` la fonction :
+void executeForm(AForm const & form) const;
+
+
+Elle doit tenter d’exécuter le formulaire.
+
+• Si succès → afficher :
+<bureaucrat> executed <form>
+
+• Si échec → afficher un message d’erreur clair.
+
+---
+
+Enfin : vous devez soumettre des tests pour prouver que tout fonctionne comme prévu.
+
+
+
+============================================================
+EXERCICE 03 : At least this beats coffee-making
+============================================================
+
+Dossier à rendre : ex03/
+
+Fichiers à rendre :
+Tous les fichiers des exercices précédents +
+Intern.{h, hpp}, Intern.cpp
+
+Fonctions interdites : Aucune
+
+---
+
+Comme il serait trop cruel de faire passer leurs journées à remplir des formulaires à nos bureaucrates,
+des stagiaires existent pour s’occuper de cette tâche fastidieuse.
+
+Dans cet exercice, vous devez implémenter la classe `Intern`.
+
+L’Intern n’a :
+
+• pas de nom
+• pas de grade
+• pas de caractéristique particulière
+
+La seule chose que les bureaucrates attendent d’eux est qu’ils fassent leur travail.
+
+---
+
+Cependant, l’Intern possède une capacité essentielle :
+
+AForm* makeForm(std::string const & formName, std::string const & target);
+
+
+Cette fonction prend deux chaînes en paramètre :
+
+• le premier paramètre = le nom du formulaire
+• le second paramètre = la cible du formulaire
+
+Elle doit retourner un **pointeur vers un objet AForm**, correspondant au nom passé en paramètre,
+et initialisé avec la cible donnée.
+
+---
+
+Lorsqu’un formulaire est créé, la fonction doit afficher :
+Intern creates <form>
+
+---
+
+Si le formulaire demandé n’existe pas, la fonction doit afficher **un message d’erreur explicite**.
+
+⚠️ Vous devez éviter les solutions illisibles comme :
+
+if (name == "robotomy request") ...
+else if (name == "shrubbery creation") ...
+else if (name == "presidential pardon") ...
+else ...
+
+
+Ce genre d'approche NE SERA PAS ACCEPTÉ lors de l’évaluation.  
+Vous n’êtes plus à la piscine.
+
+Une solution attendue doit être claire, propre, et modulaire.
+
+(Hint implicite : tableau de paires / pointeurs de fonction / mapping structuré)
+
+---
+
+Comme d’habitude, vous devez tester que tout fonctionne.
+
+---
+
+Exemple donné par le sujet :
+
+{
+Intern someRandomIntern;
+AForm* rrf;
+rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+}

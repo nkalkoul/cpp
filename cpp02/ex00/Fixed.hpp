@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 21:10:08 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/10/26 21:40:02 by nkalkoul         ###   ########.fr       */
+/*   Created: 2025/10/21 13:36:25 by nkalkoul          #+#    #+#             */
+/*   Updated: 2025/10/26 17:50:23 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "ClapTrap.hpp"
+#include <iostream>
 
-class FragTrap : public ClapTrap 
-{
+class Fixed {
 
-public:
+private :
 
-	FragTrap( void );
-	FragTrap( const std::string n );
-	FragTrap( const FragTrap &s);
-	FragTrap &operator=(const FragTrap &s);
-	~FragTrap( void );
-	void attack( const std::string &target);
-	void guardGate( void );
-	void highFiveGuys(void);
+	int _Rawbits;
+	static const int	_FractionalBits = 8;
+
+public :
+
+	Fixed( void );
+	Fixed( const Fixed &f);
+	Fixed &operator=(const Fixed &f);
+	~Fixed();
+	
+	int	getRawBits( void ) const;
+	void setRawBits( int const raw );
 };

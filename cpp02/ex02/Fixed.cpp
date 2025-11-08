@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 14:23:59 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/10/22 16:35:09 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2025/10/26 18:55:37 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,15 @@ Fixed::Fixed( const Fixed &f) {
 	*this = f;
 }
 
+Fixed::Fixed( const int n){
+	this->_RawBits = n * (1 << this->_FractionalBits);
+}
+
 Fixed::Fixed( void ) : _RawBits(0){
+}
+
+Fixed::Fixed( const float n){
+	this->_RawBits = roundf(n * (1 << this->_FractionalBits));
 }
 
 Fixed &Fixed::operator=(const Fixed &f){
@@ -25,6 +33,7 @@ Fixed &Fixed::operator=(const Fixed &f){
 	}
 	return (*this);
 }
+
 
 Fixed::~Fixed( void ){
 }
@@ -42,13 +51,6 @@ std::ostream &operator<<(std::ostream &out, const Fixed &value){
 	return out;
 }
 
-Fixed::Fixed( const int n){
-	this->_RawBits = n * (1 << this->_FractionalBits);
-}
-
-Fixed::Fixed( const float n){
-	this->_RawBits = roundf(n * (1 << this->_FractionalBits));
-}
 
 float Fixed::toFloat( void ) const{
 	return ((float)this->_RawBits / (1 << _FractionalBits));
@@ -84,19 +86,23 @@ bool Fixed::operator==(const Fixed &f)const {
 }
 
 Fixed Fixed::operator+(const Fixed &f){
-	return (this->_RawBits + f._RawBits);
+	this->_RawBits += f._RawBits;
+	return (*this);
 }
 
 Fixed Fixed::operator-(const Fixed &f){
-	return (this->_RawBits - f._RawBits);
+	this->_RawBits -= f._RawBits;
+	return (*this);
 }
 
 Fixed Fixed::operator/(const Fixed &f){
-	return (this->_RawBits / f._RawBits);
+	this->_RawBits /= f._RawBits / (1 << f._FractionalBits);
+	return (*this);
 }
 
 Fixed Fixed::operator*(const Fixed &f){
-	return (this->_RawBits * f._RawBits);
+	this->_RawBits *= f._RawBits / (1 << f._FractionalBits);
+	return (*this);
 }
 
 Fixed &Fixed::operator++( void ){
@@ -105,7 +111,7 @@ Fixed &Fixed::operator++( void ){
 }
 
 Fixed Fixed::operator++( int ){
-	Fixed dest = this->_RawBits;
+	Fixed dest = *this;
 	this->_RawBits++;
 	return (dest);
 }
@@ -116,8 +122,9 @@ Fixed &Fixed::operator--( void ){
 }
 
 Fixed Fixed::operator--( int ){
+	Fixed dest = *this;
 	this->_RawBits--;
-	return (*this);
+	return (dest);
 }
 
 const Fixed Fixed:: min( const Fixed &a, const Fixed &b ){

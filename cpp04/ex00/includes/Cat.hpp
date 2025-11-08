@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nassuto <nassuto@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 19:49:05 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/10/23 12:51:48 by nassuto          ###   ########.fr       */
+/*   Created: 2025/10/23 16:29:06 by nkalkoul          #+#    #+#             */
+/*   Updated: 2025/10/24 21:15:46 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#pragma once
 
-int	main(void){
-	FragTrap o;
-	FragTrap n("Nass");
-	FragTrap q2;
+#include <iostream>
+#include "Animal.hpp"
 
-	q2 = n;
-	n.attack("saif");
-	n.takeDamage(5);
-	n.beRepaired(5);
-	q2.guardGate();
-	o.guardGate();
-	n.highFiveGuys();
-	n.beRepaired(5);
+class Cat : public Animal 
+{
 	
-}
+public:
+	Cat( void );
+	virtual ~Cat( void );
+	Cat( const std::string t );
+	Cat( const Cat &a );
+	Cat &operator=( const Cat &a );
+	void	makeSound( void ) const;
+};

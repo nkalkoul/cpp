@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Claptrap.hpp                                       :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 19:47:19 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/10/22 20:40:13 by nkalkoul         ###   ########.fr       */
+/*   Created: 2025/10/23 16:29:06 by nkalkoul          #+#    #+#             */
+/*   Updated: 2025/10/24 19:39:13 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
+#include "Animal.hpp"
 
-class Claptrap{
-
-private:
+class Dog : public Animal {
 	
-	std::string _name;
-	int _Hit;
-	int	_Energypoint;
-	int _attackDamage;
-
 public:
-	Claptrap( void );
-	Claptrap(const std::string n);
-	Claptrap(const Claptrap &c);
-	Claptrap &operator=(const Claptrap &c);
-	~Claptrap();
-	void	attack(const std::string &target);
-	void	takeDamage(unsigned int amount);
-	void	beRepaired(unsigned int amount);
+	Dog ( void );
+	virtual ~Dog ( void );
+	Dog ( const std::string t );
+	Dog ( const Dog  &a );
+	Dog  &operator=( const Dog  &a );
+	void	makeSound( void ) const;
 };

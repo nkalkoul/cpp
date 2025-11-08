@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 07:16:48 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/10/21 07:02:32 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2025/10/23 16:10:00 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	file::createnew( void ){
 		content += line;
 		if (!_infile.eof())
 			content += "\n";
-		}
+	}
 	while ((pos = content.find(this->_tofind, pos)) != std::string::npos){
 		content = content.substr(0, pos) + _toreplace + content.substr(pos + _tofind.size(), content.size());
 		pos += _toreplace.size();

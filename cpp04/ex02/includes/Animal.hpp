@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fixed.hpp                                          :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/21 13:36:25 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/10/22 16:46:33 by nkalkoul         ###   ########.fr       */
+/*   Created: 2025/10/23 16:29:06 by nkalkoul          #+#    #+#             */
+/*   Updated: 2025/10/25 00:51:20 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
+#include <string>
 
-class Fixed {
-
-private :
-
-	int _Rawbits;
-	static const int	_FractionalBits = 8;
-
-public :
-
-	Fixed( void );
-	Fixed( const Fixed &f);
-	Fixed &operator=(const Fixed &f);
-	~Fixed();
+class Animal {
 	
-	int	getRawBits( void ) const;
-	void setRawBits( int const raw );
+protected:
+	std::string type;
+
+public:
+	Animal( void );
+	virtual ~Animal( void );
+	Animal( const std::string t );
+	Animal( const Animal &a );
+	Animal &operator=( const Animal &a );
+	virtual void	makeSound( void ) const = 0;
+	std::string getType( void ) const;
 };

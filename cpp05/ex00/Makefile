@@ -1,6 +1,6 @@
-SRCS =	main.cpp ScavTrap.cpp ClapTrap.cpp
+SRCS =	main.cpp Bureaucrat.cpp
 CC =	c++ -Wall -Werror -Wextra -std=c++98 -g3
-NAME =	scav
+NAME =	Bureaucrat
 OBJS =	$(SRCS:.cpp=.o)
 
 all : $(NAME)

@@ -6,11 +6,11 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 13:34:52 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/10/22 16:32:53 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2025/10/26 17:50:23 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fixed.hpp"
+#include "Fixed.hpp"
 
 
 int main( void ) {

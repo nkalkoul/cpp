@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 21:10:08 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/10/26 21:40:02 by nkalkoul         ###   ########.fr       */
+/*   Created: 2025/10/23 16:29:06 by nkalkoul          #+#    #+#             */
+/*   Updated: 2025/10/25 00:23:26 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "ClapTrap.hpp"
+#include <iostream>
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-class FragTrap : public ClapTrap 
+class Cat : public Animal 
 {
-
+private:
+	Brain *br;	
 public:
-
-	FragTrap( void );
-	FragTrap( const std::string n );
-	FragTrap( const FragTrap &s);
-	FragTrap &operator=(const FragTrap &s);
-	~FragTrap( void );
-	void attack( const std::string &target);
-	void guardGate( void );
-	void highFiveGuys(void);
+	Cat( void );
+	virtual ~Cat( void );
+	Cat( const std::string t );
+	Cat( const Cat &a );
+	Cat &operator=( const Cat &a );
+	void	makeSound( void ) const;
+	void setid(const std::string id);
+	void lookid( void );
 };

@@ -6,11 +6,11 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 14:23:59 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/10/22 16:56:18 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2025/10/26 17:50:23 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fixed.hpp"
+#include "Fixed.hpp"
 
 Fixed::Fixed( const Fixed &f){
 	std::cout << "Copy constructor called" << std::endl;

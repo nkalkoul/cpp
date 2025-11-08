@@ -1,5 +1,5 @@
-SRCS =	main.cpp Scavtrap.cpp Claptrap.cpp FragTrap.cpp
-CC =	c++ -Wall -Werror -Wextra -std=c++98 -g3
+SRCS =	main.c
+CC =	cc -Wall -Werror -Wextra  -g3
 NAME =	Frag
 OBJS =	$(SRCS:.cpp=.o)
 

@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 05:46:28 by nassuto           #+#    #+#             */
-/*   Updated: 2025/10/22 15:59:24 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2025/10/26 19:50:01 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,21 @@ int main( void ) {
 	std::cout << a << std::endl;
 	std::cout << ++a << std::endl;
 	std::cout << a << std::endl;
+	
 	std::cout << a++ << std::endl;
 	std::cout << a << std::endl;
+	
 	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
+	
+	
+	Fixed c(b);
+	Fixed d(2);
+	c = c / d;
+	std::cout << Fixed::max( a, b ) << std::endl << c << std::endl;
+	c = c + d;
+	std::cout << c << std::endl;
+	c = c - d;
+	std::cout << c << std::endl;
+	
 	return 0;
 }

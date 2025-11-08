@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 21:10:08 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/10/26 21:40:02 by nkalkoul         ###   ########.fr       */
+/*   Created: 2025/10/22 19:49:05 by nkalkoul          #+#    #+#             */
+/*   Updated: 2025/10/27 02:01:59 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+// #include "FragTrap.hpp"
 
-#include "ClapTrap.hpp"
+int	main(void){
+	// FragTrap o;
+	// FragTrap n("Nass");
+	// FragTrap q2;
 
-class FragTrap : public ClapTrap 
-{
-
-public:
-
-	FragTrap( void );
-	FragTrap( const std::string n );
-	FragTrap( const FragTrap &s);
-	FragTrap &operator=(const FragTrap &s);
-	~FragTrap( void );
-	void attack( const std::string &target);
-	void guardGate( void );
-	void highFiveGuys(void);
-};
+	// q2 = n;
+	// n.attack("saif");
+	// n.takeDamage(5);
+	// n.beRepaired(5);
+	// q2.guardGate();
+	// o.guardGate();
+	// n.highFiveGuys();
+	// n.beRepaired(5);
+	
+}
