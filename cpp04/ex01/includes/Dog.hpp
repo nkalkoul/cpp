@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 16:29:06 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/10/24 23:40:14 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2025/10/27 03:52:34 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ private:
 
 public:
 	Dog ( void );
-	virtual ~Dog ( void );
+	 ~Dog ( void );
 	Dog ( const std::string t );
 	Dog ( const Dog  &a );
 	Dog  &operator=( const Dog  &a );

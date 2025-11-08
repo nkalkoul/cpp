@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 19:02:43 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/10/25 01:34:59 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2025/10/27 03:57:33 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main()
 	const Animal* i = new Cat();
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
+	i->makeSound();
 	j->makeSound();
 	std::cout << "--------------TEST FOR Alloc-----------------" << std::endl;
 	delete j;

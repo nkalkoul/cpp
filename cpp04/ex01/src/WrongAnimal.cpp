@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 20:07:09 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/10/25 00:37:06 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2025/10/27 03:43:37 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ WrongAnimal::~WrongAnimal( void ){
 WrongAnimal::WrongAnimal( const std::string t) : type(t){
 	std::cout
 		<< "WRONG ANIMAAL type constructor called" << std::endl;
+	
 }
 
 WrongAnimal::WrongAnimal( const WrongAnimal &a){
