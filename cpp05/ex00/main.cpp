@@ -6,7 +6,12 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 09:15:37 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/11/04 09:15:38 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2025/11/08 18:25:54 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Bureaucrat.hpp"
+
+int	main( void ){
+	Bureaucrat a;
+}
