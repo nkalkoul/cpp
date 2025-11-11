@@ -6,11 +6,12 @@
 /*   By: nassuto <nassuto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 09:15:30 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/11/11 08:18:15 by nassuto          ###   ########.fr       */
+/*   Updated: 2025/11/11 19:48:33 by nassuto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat( void ): _name("NoId"), _grade(150){
 	std::cout << "basic constructor called" << std::endl;
@@ -63,4 +64,14 @@ void Bureaucrat::downgrade( void ){
 std::ostream &operator<<(std::ostream &out, Bureaucrat &a){
 	out << a.getName() << ", bureaucrat grade " << a.getGrade() << '.';
 	return (out);
+}
+
+void Bureaucrat::signForm( Form &f ){
+	try{
+		f.beSigned(*this);
+	}
+	catch(const std::exception &e){
+		std::cerr << this->_name << " couldn't sign " << f.getName() << " because " << e.what() << std::endl;
+	}
+	std::cout << this->_name << " signed " << f.getName() << std::endl;
 }

@@ -6,14 +6,14 @@
 /*   By: nassuto <nassuto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 09:15:37 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/11/11 08:19:43 by nassuto          ###   ########.fr       */
+/*   Updated: 2025/11/11 19:59:12 by nassuto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int	main( void ){
-	Bureaucrat a;
 	try
 	{
 		Bureaucrat b("stud", 151);
@@ -25,26 +25,16 @@ int	main( void ){
 		std::cerr << "ERROR: \n" << e.what() << '\n';
 	}
 	try {
-		Bureaucrat c("stagiaire", 100);
-		Bureaucrat d(c);
-		Bureaucrat g("cadre supp", 4);
-		for (int i = 0; i < 5; i++){
-			c.upgrade();
-			g.upgrade();
-			d.downgrade();
-			std::cout << " UPGRADE !! "  << c << std::endl;
-			std::cout << " UPGRADE !! "  << g << std::endl;
-			
-			std::cout << " downgrade ... "  << d << std::endl;
-		}
+		Form b("permis b", 100);
+		Form a("permis A", 49);
+		Bureaucrat s("saif", 50);
+		s.signForm( b );
+		s.signForm(a);
+		std::cout << b << std::endl << a << std::endl;
+		Form z("URSAFF", 0);
 	}
-	catch(const std::exception &e){
-		std::cerr << "ERROR: \n" << e.what() << '\n';
-	}
-	try{
-		a.downgrade();
-	}
-	catch(const std::exception &e){
-		std::cerr << "ERROR: \n" << e.what() << '\n';
+	catch (const std::exception &e)
+	{
+		std::cerr << "erreur : " << e.what() << std::endl;
 	}
 }
