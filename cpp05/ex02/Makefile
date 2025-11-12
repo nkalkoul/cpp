@@ -1,4 +1,4 @@
-SRCS =	main.cpp Bureaucrat.cpp Form.cpp
+SRCS =	main.cpp Bureaucrat.cpp AForm.cpp
 CC =	c++ -Wall -Werror -Wextra -std=c++98 -g3
 NAME =	Bureaucrat
 OBJS =	$(SRCS:.cpp=.o)

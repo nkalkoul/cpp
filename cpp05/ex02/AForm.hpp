@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nassuto <nassuto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -17,7 +17,7 @@
 #include <exception>
 
 class Bureaucrat;
-class Form {
+class AForm {
 	private:
 		const std::string _name;
 		bool _sign;
@@ -37,11 +37,11 @@ class Form {
 				return ("grade is to looww...");
 			}
 		};
-		Form( void );
-		Form( const std::string &name, int grade );
-		Form( const Form &f );
-		~Form( void );
-		Form &operator=(const Form &f);
+		AForm( void );
+		AForm( const std::string &name, int grade );
+		AForm( const AForm &f );
+		~AForm( void );
+		AForm &operator=(const AForm &f);
 		int getsignGrade( void ) const;
 		int	getexecGrade( void ) const;
 		bool ifsigned( void ) const;
@@ -49,4 +49,4 @@ class Form {
 		void beSigned( Bureaucrat const &b );
 };
 
-std::ostream &operator<<(std::ostream &out, Form &f);
+std::ostream &operator<<(std::ostream &out, AForm &f);

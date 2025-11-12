@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nassuto <nassuto@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 09:15:35 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/11/11 19:36:53 by nassuto          ###   ########.fr       */
+/*   Updated: 2025/11/12 19:54:28 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <sstream>
 #include <exception>
 
-class Form;
+class AForm;
 
 class Bureaucrat {
 
@@ -64,7 +64,7 @@ public :
 	std::string	getName( void ) const;
 	void upgrade( void );
 	void downgrade( void );
-	void signForm ( Form &f);
+	void signForm ( AForm &f);
 };
 
 std::ostream &operator<<(std::ostream &out, Bureaucrat &a);

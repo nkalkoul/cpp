@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nassuto <nassuto@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 09:15:30 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/11/11 19:48:33 by nassuto          ###   ########.fr       */
+/*   Updated: 2025/11/12 19:54:28 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include AForm.hpp"
 
 Bureaucrat::Bureaucrat( void ): _name("NoId"), _grade(150){
 	std::cout << "basic constructor called" << std::endl;
@@ -66,7 +66,7 @@ std::ostream &operator<<(std::ostream &out, Bureaucrat &a){
 	return (out);
 }
 
-void Bureaucrat::signForm( Form &f ){
+void Bureaucrat::signForm( AForm &f ){
 	try{
 		f.beSigned(*this);
 	}
