@@ -6,35 +6,43 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 09:15:37 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/11/12 19:54:28 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2025/11/16 21:38:50 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include AForm.hpp"
+#include "../nclds/Bureaucrat.hpp"
+#include "../nclds/AForm.hpp"
+#include "../nclds/ShrubberyCreationForm.hpp"
+#include "../nclds/PresidentialPardonForm.hpp"
+#include "../nclds/RobotomyRequestForm.hpp"
 
 int	main( void ){
-	try
-	{
-		Bureaucrat b("stud", 151);
-		Bureaucrat e;
-		e.downgrade();
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << "ERROR: \n" << e.what() << '\n';
-	}
+	
 	try {
-		AForm b("permis b", 100);
-		AForm a("permis A", 49);
-		Bureaucrat s("saif", 50);
-		s.signForm( b );
-		s.signForm(a);
-		std::cout << b << std::endl << a << std::endl;
-		AForm z("URSAFF", 0);
+		Bureaucrat q("sinthujan", 50);
+		Bureaucrat o("ouss", 1);
+		ShrubberyCreationForm a("ff");
+		AForm *f = new ShrubberyCreationForm("ok");
+		AForm *p = new PresidentialPardonForm("ok");
+		AForm *r = new RobotomyRequestForm("ok");
+		q.signForm(*f);
+		f->execute(q);
+		q.signForm(*r);
+		r->execute(q);
+		
+		o.signForm(*p);
+		p->execute(o);
+		r->execute(o);
+		r->execute(q);
+		std::cout << std::endl;
+		q.signForm(*p);
+		p->execute(q);
+		delete(f);
+		delete(p);
+		delete(r);
 	}
-	catch (const std::exception &e)
-	{
-		std::cerr << "erreur : " << e.what() << std::endl;
+	catch(const std::exception &e) {
+		std::cerr << "catch : " << e.what() << std::endl;
+
 	}
 }

@@ -205,7 +205,7 @@ Sinon → lancer une exception appropriée.
 
 Vous pouvez faire la vérification :
 
-✔ soit dans chaque classe concrète  
+✔ soit dans chaque classe concrète 
 ✔ soit dans la classe de base AForm (et appeler une fonction virtuelle d’action)
 
 ⚠️ Mais “une des deux méthodes est plus élégante que l’autre”.

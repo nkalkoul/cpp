@@ -6,12 +6,12 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 08:23:17 by nassuto           #+#    #+#             */
-/*   Updated: 2025/11/12 19:54:28 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2025/11/16 13:59:19 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include AForm.hpp"
-#include "Bureaucrat.hpp"
+#include "../nclds/AForm.hpp"
+#include "../nclds/Bureaucrat.hpp"
 
 AForm::AForm( void ): _name("formulaire basic"),
 _sign(false),
@@ -19,14 +19,15 @@ _signgrade(150),
 _execgrade(150){
 }
 
-AForm::AForm( const std::string &name, int grade ):
+AForm::AForm( const std::string &name, int signgrade, int execgrade):
 _name(name),
 _sign(false),
-_signgrade(grade),
-_execgrade(grade){
-	if (grade > 150)
+_signgrade(signgrade),
+_execgrade(execgrade){
+	
+	if (execgrade > 150 || signgrade > 150)
 		throw AForm::GradeTooLowException();
-	if (grade < 1)
+	if (execgrade < 1 || signgrade < 1)
 		throw AForm::GradeTooHighException();
 }
 
@@ -34,6 +35,7 @@ AForm::AForm(const AForm &f):
 _name(f._name),
 _signgrade(f._signgrade),
 _execgrade(f._execgrade){
+
 	*this = f;
 }
 
@@ -73,4 +75,13 @@ void AForm::beSigned( Bureaucrat const &b){
 		_sign = true;
 	else
 		throw AForm::GradeTooLowException();
+}
+
+void AForm::execute( const Bureaucrat &executor) const {
+	if (_sign == false)
+		throw std::runtime_error("the form is not signed");
+	if (_execgrade < executor.getGrade())
+		throw GradeTooLowException();
+	else
+		action();
 }
