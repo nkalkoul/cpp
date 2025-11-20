@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 09:15:30 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/11/13 08:31:27 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2025/11/18 19:23:30 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,9 +69,9 @@ std::ostream &operator<<(std::ostream &out, Bureaucrat &a){
 void Bureaucrat::signForm( AForm &f ){
 	try{
 		f.beSigned(*this);
+		std::cout << this->_name << " signed " << f.getName() << std::endl;
 	}
 	catch(const std::exception &e){
 		std::cerr << this->_name << " couldn't sign " << f.getName() << " because " << e.what() << std::endl;
 	}
-	std::cout << this->_name << " signed " << f.getName() << std::endl;
 }

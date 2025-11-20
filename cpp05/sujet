@@ -168,7 +168,7 @@ donc être renommée `AForm`.
 Ajoutez les classes concrètes suivantes :
 
 1) `ShrubberyCreationForm`
-   • Grades requis : signer = 145, exécuter = 137  
+   • Grades requicouldns : signer = 145, exécuter = 137  
    • Action : crée un fichier `<target>_shrubbery` dans le répertoire courant
      et écrit des arbres ASCII dedans.
 

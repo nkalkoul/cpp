@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 09:15:37 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/11/16 21:38:50 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2025/11/18 19:37:52 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,16 @@
 #include "../nclds/RobotomyRequestForm.hpp"
 
 int	main( void ){
-	
+	AForm *f = NULL;
+	AForm *p = NULL;
+	AForm *r = NULL;
 	try {
 		Bureaucrat q("sinthujan", 50);
 		Bureaucrat o("ouss", 1);
 		ShrubberyCreationForm a("ff");
-		AForm *f = new ShrubberyCreationForm("ok");
-		AForm *p = new PresidentialPardonForm("ok");
-		AForm *r = new RobotomyRequestForm("ok");
+		f = new ShrubberyCreationForm("tree");
+		p = new PresidentialPardonForm("wassim");
+		r = new RobotomyRequestForm("ok");
 		q.signForm(*f);
 		f->execute(q);
 		q.signForm(*r);
@@ -37,12 +39,12 @@ int	main( void ){
 		std::cout << std::endl;
 		q.signForm(*p);
 		p->execute(q);
-		delete(f);
-		delete(p);
-		delete(r);
 	}
 	catch(const std::exception &e) {
 		std::cerr << "catch : " << e.what() << std::endl;
-
+		
 	}
+	delete(f);
+	delete(p);
+	delete(r);
 }

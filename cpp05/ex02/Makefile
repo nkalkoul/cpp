@@ -1,6 +1,6 @@
 SRCS =	$(addprefix srcs/, main.cpp AForm.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp \
 			RobotomyRequestForm.cpp Bureaucrat.cpp)
-CC =	c++ -std=c++98 -g3
+CC =	c++ -Wall -Werror -Wextra -std=c++98 -g3
 NAME =	form
 OBJS =	$(SRCS:.cpp=.o)
 
