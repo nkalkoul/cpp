@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 09:15:35 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/11/12 19:54:28 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2025/11/22 04:05:25 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ public :
 	void upgrade( void );
 	void downgrade( void );
 	void signForm ( AForm &f);
+	
 };
 
 std::ostream &operator<<(std::ostream &out, Bureaucrat &a);

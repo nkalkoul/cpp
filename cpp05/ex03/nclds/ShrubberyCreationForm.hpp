@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 19:47:57 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/11/16 07:08:00 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2025/11/22 04:14:05 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,5 @@ class ShrubberyCreationForm : public AForm {
 		~ShrubberyCreationForm( void );
 		void action( void ) const;
 		ShrubberyCreationForm &operator=( const ShrubberyCreationForm &s);
+		ShrubberyCreationForm *create(const std::string &name, const std::string &target);
 };

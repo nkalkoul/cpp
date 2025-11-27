@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Intern.hpp                                         :+:      :+:    :+:   */
+/*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/18 19:26:58 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/11/22 18:35:09 by nkalkoul         ###   ########.fr       */
+/*   Created: 2025/11/25 23:33:08 by nkalkoul          #+#    #+#             */
+/*   Updated: 2025/11/27 04:41:31 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AForm.hpp"
+#include "ScalarConverter.hpp"
 
-class Intern{
+ScalarConverter::ScalarConverter( void ){
+	
+}
 
-public:
-	Intern( void );
-	Intern( const Intern &i);
-	~Intern( void );
-	Intern &operator=(const Intern &i);
-	AForm *makeform(std::string const &formName, std::string const &target);
-};
+ScalarConverter::ScalarConverter( const ScalarConverter &s){
+	*this = s;
+}
+
+ScalarConverter &ScalarConverter::operator=(const ScalarConverter &s){
+	return (*this);
+}
+
+ScalarConverter::~ScalarConverter( void ){
+	
+}
+
+void ScalarConverter::convert(const std::string &l){
+	
+}

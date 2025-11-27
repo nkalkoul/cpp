@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 19:47:57 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/11/16 07:07:57 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2025/11/22 04:13:19 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,5 @@ class PresidentialPardonForm : public AForm {
 		~PresidentialPardonForm( void );
 		PresidentialPardonForm &operator=( const PresidentialPardonForm &s);
 		void action( void )const ;
+		PresidentialPardonForm *create(const std::string &name, const std::string &target);
 };
