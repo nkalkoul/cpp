@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/23 20:49:04 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/12/11 08:07:01 by nkalkoul         ###   ########.fr       */
+/*   Created: 2025/12/20 11:57:04 by nkalkoul          #+#    #+#             */
+/*   Updated: 2025/12/22 14:12:11 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-
+#include "vector"
+#include <exception>
 #include <iostream>
 #include <cstdlib>
-#include <cctype>
-#include <cmath>
-#include <limits>
-#include <iomanip>
-#include <sstream>
 
-class ScalarConverter{
+class Span{
 
 private:
-	ScalarConverter( void );
-	ScalarConverter( const ScalarConverter &s);
-	ScalarConverter &operator=(const ScalarConverter &s);
-	~ScalarConverter( void );
-public:
-	static void convert(const std::string &l);
+	unsigned int length;
+	std::vector<int> store;
 
+public:
+	Span(unsigned int l);
+	Span( void );
+	Span( const Span &s);
+	Span &operator=(const Span &s);
+	~Span( void );
+	void addNumber(const int n);
+	int	shortestSpan( void );
+	int	longestSpan( void );
 };

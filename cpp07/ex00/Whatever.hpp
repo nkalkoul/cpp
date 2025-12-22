@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   Whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/23 20:49:04 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/12/11 08:07:01 by nkalkoul         ###   ########.fr       */
+/*   Created: 2025/12/13 08:59:59 by nkalkoul          #+#    #+#             */
+/*   Updated: 2025/12/13 20:17:14 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-
 #include <iostream>
-#include <cstdlib>
-#include <cctype>
-#include <cmath>
-#include <limits>
-#include <iomanip>
-#include <sstream>
 
-class ScalarConverter{
+template <typename T>
 
-private:
-	ScalarConverter( void );
-	ScalarConverter( const ScalarConverter &s);
-	ScalarConverter &operator=(const ScalarConverter &s);
-	~ScalarConverter( void );
-public:
-	static void convert(const std::string &l);
+void swap(T &v1, T &v2){
+	T tmp = v1;
+	v1 = v2;
+	v2 = tmp;
+}
 
-};
+template <typename T>
+T min(T v1, T v2){
+	return (v1 < v2 ? v1 : v2);
+}
+
+template <typename T>
+T max(T v1, T v2){
+	return (v1 > v2 ? v1 : v2);
+}

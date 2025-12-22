@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   easyfind.tpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/23 20:49:04 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/12/11 08:07:01 by nkalkoul         ###   ########.fr       */
+/*   Created: 2025/12/19 16:10:19 by nkalkoul          #+#    #+#             */
+/*   Updated: 2025/12/20 11:05:36 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-
-#include <iostream>
-#include <cstdlib>
-#include <cctype>
-#include <cmath>
-#include <limits>
-#include <iomanip>
-#include <sstream>
-
-class ScalarConverter{
-
-private:
-	ScalarConverter( void );
-	ScalarConverter( const ScalarConverter &s);
-	ScalarConverter &operator=(const ScalarConverter &s);
-	~ScalarConverter( void );
-public:
-	static void convert(const std::string &l);
-
-};
+template <typename T>
+typename T::const_iterator easyfind(const T &cont, int tofind){
+	typename T::const_iterator it = cont.begin();
+	while (it != cont.end()){
+		if (*it == tofind)
+			return it;
+		it++;
+	}
+	throw std::runtime_error("not found");
+}

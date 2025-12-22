@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/23 20:49:04 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/12/11 08:07:01 by nkalkoul         ###   ########.fr       */
+/*   Created: 2025/12/13 20:19:07 by nkalkoul          #+#    #+#             */
+/*   Updated: 2025/12/14 11:07:56 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-
 #include <iostream>
-#include <cstdlib>
-#include <cctype>
-#include <cmath>
-#include <limits>
-#include <iomanip>
-#include <sstream>
 
-class ScalarConverter{
+template <typename T>
+void iter(T *array, const std::size_t lengh, void(*f)(T &)){
+	for (std::size_t i = 0; i < lengh; i++){
+		f(array[i]);
+	}
+}
 
-private:
-	ScalarConverter( void );
-	ScalarConverter( const ScalarConverter &s);
-	ScalarConverter &operator=(const ScalarConverter &s);
-	~ScalarConverter( void );
-public:
-	static void convert(const std::string &l);
-
-};
+template <typename T>
+void iter(const T *array, const std::size_t lengh, void(*f)(const T &)){
+	for (std::size_t i = 0; i < lengh; i++){
+		f(array[i]);
+	}
+}

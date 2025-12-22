@@ -1,6 +1,6 @@
-SRCS =	ScalarConverter.cpp main.cpp
+SRCS =	main.cpp Span.cpp
 CC =	c++ -Wall -Werror -Wextra -std=c++98 -g3
-NAME =	scale
+NAME =	span
 OBJS =	$(SRCS:.cpp=.o)
 
 all : $(NAME)

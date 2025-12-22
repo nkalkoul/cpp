@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 13:36:25 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/10/22 16:03:52 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2025/12/10 13:36:20 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,5 @@ public :
 	static const	Fixed max( const Fixed& a, const Fixed& b );
 	
 };
-
 
 std::ostream &operator<<(std::ostream &out, const Fixed &value);

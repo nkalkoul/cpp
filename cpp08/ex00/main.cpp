@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/23 20:49:04 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/12/11 08:07:01 by nkalkoul         ###   ########.fr       */
+/*   Created: 2025/12/19 16:10:27 by nkalkoul          #+#    #+#             */
+/*   Updated: 2025/12/20 11:49:36 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "easyfind.hpp"
+#include "vector"
+#include "list"
 
-#include <iostream>
-#include <cstdlib>
-#include <cctype>
-#include <cmath>
-#include <limits>
-#include <iomanip>
-#include <sstream>
+int main( void ){
+	std::vector<int> v(5);
+	std::list<int> lst;
 
-class ScalarConverter{
+	for (int i = 0; i < 5; i++){
+		v[i] = i;
+		lst.push_back(i - 1);
+	}
 
-private:
-	ScalarConverter( void );
-	ScalarConverter( const ScalarConverter &s);
-	ScalarConverter &operator=(const ScalarConverter &s);
-	~ScalarConverter( void );
-public:
-	static void convert(const std::string &l);
+	try {
+		int i = *easyfind(v, 4);
+		std::cout << i << std::endl;
+		int j = *easyfind(lst, 5);
+		std::cout << j << std::endl;
 
-};
+	}
+	catch(std::exception &e){
+		std::cerr << "error: " << e.what() << std::endl;
+	};
+}
