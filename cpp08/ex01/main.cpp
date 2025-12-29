@@ -6,15 +6,23 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 14:04:22 by nkalkoul          #+#    #+#             */
-/*   Updated: 2025/12/22 15:00:09 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2025/12/22 20:41:08 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
 int main( void ){
-	Span a(10001);
+	Span sp = Span(5);
+	sp.addNumber(6);
+	sp.addNumber(3);
+	sp.addNumber(17);
+	sp.addNumber(9);
+	sp.addNumber(11);
+	std::cout << sp.shortestSpan() << std::endl;
+	std::cout << sp.longestSpan() << "\n\n";
 	try{
+	Span a(10001);
 	for (int i = 0; i < 10000; i++){
 		a.addNumber(i);
 	}
@@ -37,4 +45,5 @@ int main( void ){
 	catch(std::exception &e){
 		std::cerr << "error2: " << e.what() << std::endl;
 	};
+	return 0;
 }
