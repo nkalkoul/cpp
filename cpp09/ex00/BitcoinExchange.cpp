@@ -6,11 +6,18 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 11:48:22 by nkalkoul          #+#    #+#             */
-/*   Updated: 2026/01/14 15:12:17 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2026/01/15 18:09:06 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
+
+static int parse(std::string &date, std::string &value){
+	for (int i = 0; i < 10; i++){
+		if (!std::isdigit(date[i]))
+			return (false);
+	}
+}
 
 BitcoinExchange::BitcoinExchange(const BitcoinExchange &b){
 	*this = b;

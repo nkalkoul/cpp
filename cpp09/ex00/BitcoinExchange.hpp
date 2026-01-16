@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 13:08:54 by nkalkoul          #+#    #+#             */
-/*   Updated: 2026/01/13 16:01:19 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2026/01/15 18:05:38 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,3 +32,4 @@ public:
 	~BitcoinExchange(void){};
 	void filldata(std::ifstream &file);
 };
+
