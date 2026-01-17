@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 11:48:22 by nkalkoul          #+#    #+#             */
-/*   Updated: 2026/01/17 11:21:44 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2026/01/17 12:20:01 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,9 @@ static bool parse_value(std::string &value){
 	if (value.size() < 1)
 		return (false);
 	char *end;
-	float test = std::strtof(value.c_str(), &end);
 	if (value == "nan" || value == "nanf")
 		return (false);
+	std::strtof(value.c_str(), &end);
 	if (*end != '\0'){
 		if (*end == 'f' && *(end + 1) == '\0' && value.size() > 1)
 			return (true);
@@ -107,7 +107,7 @@ void BitcoinExchange::filldata(std::ifstream &file){
 
 }
 
-static bool parse_input(std::string &date, std::string value, float mtp){
+static bool parse_input(std::string &value, float mtp){
 
 	bool p = parse_value(value);
 
@@ -155,7 +155,7 @@ void BitcoinExchange::comparebtc(std::ifstream &file){
 		}
 		value = line.substr(13, (line.size() - 13));
 		float mtp = std::strtof(value.c_str(), NULL);
-		if (parse_input(date, value, mtp) == false)
+		if (parse_input(value, mtp) == false)
 			continue;
 
 		std::map<std::string, float>::iterator it = data.find(date);
