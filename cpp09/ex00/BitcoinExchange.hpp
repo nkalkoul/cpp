@@ -6,7 +6,7 @@
 /*   By: nkalkoul <nkalkoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 13:08:54 by nkalkoul          #+#    #+#             */
-/*   Updated: 2026/01/15 18:05:38 by nkalkoul         ###   ########.fr       */
+/*   Updated: 2026/01/17 09:46:32 by nkalkoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 #include <iostream>
 #include "fstream"
 #include <cstdlib>
+#include <exception>
 
 
 class BitcoinExchange{
 
 private:
-std::map<std::string, float> btc;
 std::map<std::string, float> data;
 
 public:
@@ -30,6 +30,6 @@ public:
 	BitcoinExchange(const BitcoinExchange &b);
 	BitcoinExchange &operator=(const BitcoinExchange &b);
 	~BitcoinExchange(void){};
-	void filldata(std::ifstream &file);
+	void filldata(std::ifstream &data);
+	void comparebtc(std::ifstream &file);
 };
-
